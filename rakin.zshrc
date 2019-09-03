@@ -1,6 +1,20 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Ngrok
+export PATH=$PATH:/Users/rakinuddin/.ngrok/
+
+export PATH=$PATH:/usr/local/sbin:/Users/rakinuddin/.local/bin
+
+export PATH=$PATH:/Users/rakinuddin/Library/Python/3.6/bin
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$USER/.oh-my-zsh"
 
@@ -133,12 +147,11 @@ if [ -f "/Users/$USER/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/$US
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH:/usr/local/go/bin
 
-# cloudplatform: add Shopify clusters to your local kubernetes config
-export KUBECONFIG="${KUBECONFIG:+$KUBECONFIG:}/Users/$USER/.kube/config:/Users/$USER/.kube/config.shopify.cloudplatform"
-for file in "/Users/$USER/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash"; do source ${file}; done
-kubectl-short-aliases
-
 eval $(thefuck --alias)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
